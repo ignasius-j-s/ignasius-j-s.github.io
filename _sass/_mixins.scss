@@ -1,0 +1,55 @@
+@use "sass:math";
+
+@mixin breakpoint($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin clearfix {
+    clear: both;
+
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+@function em($target, $context: $global-font-size) {
+    @return ($target / $context) * 1em;
+}
+
+@mixin get-color-yiq($background) {
+    $r: red($background);
+    $g: green($background);
+    $b: blue($background);
+
+    $yiq: math.div((calc(($r * 299) + ($g * 587) + ($b * 114))), 1000);
+
+    @if ($yiq >= 128) {
+        color: $polarnight0;
+    } @else {
+        color: $snowstorm2;
+    }
+}
+
+@mixin notice($color) {
+    display: block;
+    padding: 1em;
+    background-color: mix(white, $color, 40%);
+    color: mix(black, $color, 60%);
+    font-size: 0.8em;
+    border: 1px dashed $color;
+    box-shadow: 3px 3px var(--shadow-color, $shadow-color);
+    * {
+        font-size: inherit;
+        background-color: inherit;
+        color: inherit;
+        padding: 0;
+    }
+    a {
+        color: mix(black, $color, 30%);
+        text-decoration: underline;
+    }
+}

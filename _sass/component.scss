@@ -1,0 +1,262 @@
+@use "sass:color";
+
+// title
+.post-title {
+    margin-top: 0;
+    margin-bottom: 1em;
+    h1 {
+        margin-bottom: 0.1em;
+    }
+    > p {
+        margin: 0;
+        font-size: 0.8em;
+    }
+    .date {
+        color: var(--date-color, $aurora0);
+    }
+    .author {
+        color: $aurora4;
+    }
+    .read-estimate {
+        color: $aurora3;
+    }
+    .lang {
+        color: $frost2;
+        text-transform: uppercase;
+    }
+}
+
+// Button
+%btn-base {
+    background-color: var(--secondary-background-color, $secondary-background-color);
+    font-family: $sans-serif;
+    font-weight: normal;
+    vertical-align: center;
+    text-decoration: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+a.btn-small {
+    @extend %btn-base;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 0.3em 0.35em;
+    border: 1px solid var(--border-color, $border-color);
+    color: var(--secondary-text-color, $secondary-text-color);
+    &:hover {
+        box-shadow: 3px 3px var(--shadow-color, $shadow-color);
+        border-style: solid;
+    }
+}
+
+.btn {
+    @extend %btn-base;
+    display: inline-block;
+    color: var(--text-color, $text-color);
+    border: 1px solid var(--border-color, $border-color);
+    padding: 0.5em 1em;
+    margin-bottom: 0.5em;
+
+    &--clean {
+        color: var(--secondary-text-color, $secondary-text-color);
+        border-color: var(--faded-text-color, $faded-text-color);
+        background-color: var(--background-color, $background-color);
+        &:hover {
+            background-color: var(--secondary-background-color, $secondary-background-color);
+        }
+    }
+
+    &--frost0 {
+        color: $frost0;
+        border-color: $frost0;
+        background-color: color.adjust($frost0, $lightness: 31%);
+    }
+
+    &--frost1 {
+        color: $frost1;
+        border-color: $frost1;
+        background-color: color.adjust($frost1, $lightness: 30%);
+    }
+
+    &--frost2 {
+        color: $frost2;
+        border-color: $frost2;
+        background-color: color.adjust($frost2, $lightness: 32%);
+    }
+
+    &--frost3 {
+        color: $frost3;
+        border-color: $frost3;
+        background-color: color.adjust($frost3, $lightness: 40%);
+    }
+
+    &--aurora0 {
+        color: $aurora0;
+        border-color: $aurora0;
+        background-color: color.adjust($aurora0, $lightness: 38%);
+    }
+
+    &--aurora1 {
+        color: $aurora1;
+        border-color: $aurora1;
+        background-color: color.adjust($aurora1, $lightness: 32%);
+    }
+
+    &--aurora2 {
+        color: $aurora2;
+        border-color: $aurora2;
+        background-color: color.adjust($aurora2, $lightness: 20%);
+    }
+
+    &--aurora3 {
+        color: $aurora3;
+        border-color: $aurora3;
+        background-color: color.adjust($aurora3, $lightness: 30%);
+    }
+
+    &--aurora4 {
+        color: $aurora4;
+        border-color: $aurora4;
+        background-color: color.adjust($aurora4, $lightness: 31%);
+    }
+}
+
+.no-select {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+// table
+table {
+    display: block;
+    font-family: $global-font-family;
+    margin: 1em;
+    border-collapse: collapse;
+    & + table {
+        margin-top: 1em;
+    }
+}
+caption {
+    color: var(--faded-text-color, $faded-text-color);
+    caption-side: bottom;
+    padding: 0.5em;
+    font-style: italic;
+    font-size: 0.8em;
+}
+thead,
+tfoot {
+    background-color: var(--secondary-background-color, $secondary-background-color);
+}
+th,
+td {
+    border: 1px solid var(--border-color, $border-color);
+    padding: 0.1em 0.3em;
+}
+tfoot th {
+    text-align: right;
+}
+tfoot td {
+    font-weight: bold;
+}
+
+// notices
+p.notice--info {
+    @include notice($frost1);
+}
+
+p.notice--warn {
+    @include notice($aurora2);
+}
+
+p.notice--danger {
+    @include notice($aurora0);
+}
+
+p.notice--success {
+    @include notice($aurora3);
+}
+
+// post
+.post {
+    padding: 0;
+    a {
+        text-decoration: none;
+        color: var(--text-color, $text-color);
+    }
+    li {
+        list-style-type: none;
+        margin-bottom: 1.5em;
+    }
+    .post__entry {
+        padding: 1em;
+        border: 1px solid var(--border-color, $border-color);
+
+        h2 {
+            font-size: 1em;
+            margin-bottom: 0.5em;
+            line-height: 1;
+        }
+        &:hover {
+            border-left: 5px solid var(--primary-color, $primary-color);
+            background-color: var(--secondary-background-color, $secondary-background-color);
+        }
+
+        .excerpt {
+            font-size: 0.75em;
+            margin-bottom: 0;
+        }
+    }
+}
+
+// toggle switch
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 1.9em;
+    height: 1.9em;
+
+    // Hide default checkbox
+    input {
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--toggle-background-color, $frost0);
+    border-radius: 4px;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 15%;
+        top: 15%;
+        height: 70%;
+        width: 70%;
+        border-radius: 50%;
+        box-shadow: inset 0.35em -0.3em 0 0 var(--toggle-color, yellow);
+        transition: 0.3s;
+    }
+}
+
+input:checked + .slider:before {
+    box-shadow: inset 1.6rem 0rem 0 0 var(--toggle-color, yellow);
+}

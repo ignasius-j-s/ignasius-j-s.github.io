@@ -1,0 +1,30 @@
+<div class="page__footer-social">
+  <ul>
+    {% if site.footer.links %}
+      {% for link in site.footer.links %}
+        {% if link.label and link.url %}
+          <li>
+            <a href="{{ link.url }}" rel="nofollow noopener noreferrer">
+              <i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i>{{ link.label -}}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    <li>
+      <a href="{{ '/feed.xml' | relative_url }}">
+        <i class="fa-solid fa-fw fa-rss-square" aria-hidden="true"></i>Feed
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">
+  <p>
+    &copy; {{ site.time | date: '%Y' }}
+    <a href="{{ site.url }}">{{ site.author }}</a> &middot Powered by
+    <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>
+  </p>
+  <p>Theme is based on <a href="https://nordtheme.com" rel="nofollow">Nord Theme</a></p>
+</div>

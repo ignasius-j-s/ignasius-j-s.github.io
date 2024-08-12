@@ -1,0 +1,19 @@
+<div class="post-title">
+  <h1>{{ page.title }}</h1>
+  <p class="page-subtitle">
+    Posted
+    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">
+      <span class="date">{{ page.date | date_to_string }}</span>
+    </time>
+    {% if page.last_updated %}
+      &middot Updated
+      <time datetime="{{ page.date | date: "%Y-%m-%d" }}">
+        <span class="date">{{ page.last_updated | date_to_string }}</span>
+      </time>
+    {% endif %}
+    <br>
+    by <span class="author">{{ page.author | default: site.author }}</span> &middot
+    <i class="fa-regular fa-clock"></i>
+    <span class="read-estimate">{% include reading_time.html %}</span> read
+  </p>
+</div>

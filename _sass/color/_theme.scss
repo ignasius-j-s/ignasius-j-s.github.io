@@ -1,0 +1,33 @@
+html[data-theme="light"] {
+    --background-color: #{$background-color};
+    --secondary-background-color: #{$secondary-background-color};
+    --tertiary-background-color: #{$tertiary-background-color};
+    --text-color: #{$text-color};
+    --secondary-text-color: #{$secondary-text-color};
+    --link-color: #{$link-color};
+    --primary-color: #{$primary-color};
+    --shadow-color: #{$shadow-color};
+    --border-color: #{$border-color};
+    --box-shadow-color: #{rgba($snowstorm0, $alpha: 1)};
+
+    --toggle-color: yellow;
+    --toggle-background-color: #{$frost1};
+    --date-color: #{$aurora0};
+}
+
+html[data-theme="dark"] {
+    --background-color: #{$polarnight3};
+    --secondary-background-color: #{$polarnight2};
+    --tertiary-background-color: #{$polarnight1};
+    --text-color: #{$snowstorm2};
+    --secondary-text-color: #{$snowstorm1};
+    --link-color: #{$frost1};
+    --primary-color: #{$frost0};
+    --shadow-color: #{$polarnight2};
+    --border-color: #{$frost0};
+    --box-shadow-color: #{rgba($polarnight0, $alpha: 0.4)};
+
+    --toggle-color: white;
+    --toggle-background-color: #{$polarnight2};
+    --date-color: #{$aurora1};
+}

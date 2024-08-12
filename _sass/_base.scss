@@ -1,0 +1,316 @@
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: $global-font-family;
+    font-size: $mobile-font-size;
+    @include breakpoint($small) {
+        font-size: $global-font-size;
+    }
+}
+body {
+    color: var(--text-color, $text-color);
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: var(--background-color, $background-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 2.5em 0 0.75em;
+    line-height: 1.5;
+    font-family: $header-font-family;
+    font-weight: bold;
+}
+h1 {
+    margin-top: 0;
+    font-size: $h1-size;
+}
+h2 {
+    margin-top: 0;
+    font-size: $h2-size;
+}
+h3 {
+    margin-top: 0;
+    font-size: $h3-size;
+}
+h4 {
+    margin-top: 0;
+    font-size: $h4-size;
+}
+h5 {
+    margin-top: 0;
+    font-size: $h5-size;
+}
+h6 {
+    margin-top: 0;
+    font-size: $h6-size;
+}
+p {
+    margin-bottom: 1.25em;
+}
+u {
+    text-decoration: none;
+    border-bottom: 1px solid;
+    a {
+        color: inherit;
+    }
+}
+del,
+ins {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    font-family: $monospace;
+    font-style: normal;
+    &::before {
+        display: inline-block;
+        padding-inline-end: 1ch;
+    }
+}
+del {
+    background-color: $aurora0;
+    color: $snowstorm2;
+    &::before {
+        content: "−";
+    }
+}
+ins {
+    background-color: $aurora3;
+    color: $polarnight0;
+    &::before {
+        content: "+";
+    }
+}
+pre {
+    overflow: auto;
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color, $border-color) var(--secondary-background-color, $secondary-background-color);
+}
+p,
+pre,
+blockquote,
+ul,
+ol,
+dl,
+figure,
+table,
+fieldset {
+    orphans: 3;
+    widows: 3;
+}
+abbr {
+    font-variant: small-caps;
+    &[title],
+    &[data-original-title] {
+        text-decoration: none;
+        border-bottom: 1px dotted var(--text-color, $text-color);
+        cursor: help;
+    }
+    &:hover {
+        color: var(--link-color, $link-color);
+        transition-duration: 0.3s;
+    }
+}
+blockquote {
+    margin-block: 2em;
+    margin-inline-end: 0.5em;
+    padding-inline: 0.5em;
+    font-style: italic;
+    border-inline-start: 0.25em solid var(--primary-color, $primary-color);
+    cite {
+        font-style: italic;
+        &::before {
+            content: "\2014";
+            padding-inline-end: 0.5em;
+        }
+    }
+}
+a {
+    color: var(--link-color, $link-color);
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+pre {
+    overflow: auto;
+    font-family: $monospace;
+    border-radius: $border-radius;
+}
+tt,
+code,
+samp {
+    font-family: $monospace;
+    background-color: var(--secondary-background-color, $secondary-background-color);
+    color: var(--secondary-text-color, $secondary-text-color);
+    padding: 0.1em 0.2em;
+    border-radius: $border-radius;
+}
+kbd {
+    font-family: $monospace;
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid var(--border-color, $border-color);
+    box-shadow:
+        0 1px 1px var(--shadow-color, $shadow-color),
+        0 2px 0 0 var(--secondary-background-color, $secondary-background-color);
+    font-size: 0.85em;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0.2em 0.4em;
+    white-space: nowrap;
+}
+hr {
+    display: block;
+    margin: 1em 0;
+    border: none;
+    border-top: 1px solid var(--text-color, $text-color);
+}
+ul li,
+ol li {
+    margin-bottom: 0.5em;
+}
+li ul,
+li ol {
+    margin-top: 0.5em;
+}
+figure {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0;
+    img,
+    iframe,
+    a {
+        width: 100%;
+        margin-bottom: 0.5em;
+    }
+    img {
+        border-radius: $border-radius;
+        -webkit-transition: $global-transition;
+        transition: $global-transition;
+    }
+    > a {
+        display: block;
+    }
+    figcaption {
+        color: var(--faded-text-color, $faded-text-color);
+        width: 100%;
+    }
+    &.half {
+        > a,
+        > img {
+            @include breakpoint($small) {
+                width: calc(50% - 0.75em);
+            }
+        }
+    }
+    &.third {
+        > a,
+        > img {
+            @include breakpoint($small) {
+                width: calc(33.3333% - 0.75em);
+            }
+        }
+    }
+}
+figcaption {
+    font-family: $caption-font-family;
+    font-style: italic;
+    text-align: center;
+    a {
+        -webkit-transition: $global-transition;
+        transition: $global-transition;
+    }
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        text-decoration: none;
+    }
+    ul li,
+    ol li {
+        margin-bottom: 0;
+    }
+    li ul,
+    li ol {
+        margin-top: 0;
+    }
+}
+
+img {
+    display: block;
+    max-width: 90%;
+    margin-inline: auto;
+}
+b,
+i,
+strong,
+em,
+blockquote,
+p,
+q,
+span,
+figure,
+img,
+h1,
+h2,
+header,
+input,
+a,
+tr,
+td,
+form button,
+input[type="submit"] {
+    -webkit-transition: $global-transition;
+    transition: $global-transition;
+}
+.highlight {
+    display: block;
+    background-color: var(--secondary-background-color, $secondary-background-color);
+    font-size: 0.75rem;
+    padding: 0.8rem;
+    max-height: 15rem;
+    overflow: auto;
+    scrollbar-width: thin;
+    margin-bottom: 1.5rem;
+    scrollbar-color: var(--border-color, $border-color) var(--secondary-background-color, $secondary-background-color);
+    pre {
+        display: block;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+    }
+    pre code {
+        display: block;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+    }
+}

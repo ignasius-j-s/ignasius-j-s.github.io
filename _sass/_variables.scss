@@ -1,0 +1,52 @@
+$mobile-font-size: 14px !default;
+$global-font-size: 16px !default;
+$serif: Georgia, serif !default;
+$sans-serif:
+    "iA Writer Quattro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Roboto",
+    "Segoe UI",
+    Ubuntu,
+    "Helvetica Neue",
+    "Lucida Grande",
+    Arial,
+    sans-serif !default;
+$monospace: "iA Writer Mono", Monaco, Consolas, "Ubuntu Mono", "Lucida Console", monospace !default;
+$global-font-family: $sans-serif !default;
+$header-font-family: $sans-serif !default;
+$caption-font-family: $serif !default;
+
+// Breakpoint
+$small: 600px !default;
+$medium: 768px !default;
+$medium-wide: 900px !default;
+$large: 1024px !default;
+$x-large: 1280px !default;
+$max-width: 720px !default;
+
+// heading size
+$h1-size: 1.8em !default;
+$h2-size: 1.4em !default;
+$h3-size: 1.2em !default;
+$h4-size: 1.1em !default;
+$h5-size: 1.05em !default;
+$h6-size: 1em !default;
+
+// color
+$background-color: $snowstorm2;
+$secondary-background-color: $snowstorm1;
+$tertiary-background-color: $snowstorm0;
+$text-color: $polarnight3;
+$secondary-text-color: $polarnight0;
+$faded-text-color: #adadad;
+$link-color: $frost3;
+$primary-color: $frost0;
+$shadow-color: $snowstorm0;
+
+// border
+$border-color: $frost3;
+$border-radius: 0;
+
+// other
+$global-transition: none;

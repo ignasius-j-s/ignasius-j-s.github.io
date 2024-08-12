@@ -1,0 +1,7 @@
+_site
+_example
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.vscode
+vendor

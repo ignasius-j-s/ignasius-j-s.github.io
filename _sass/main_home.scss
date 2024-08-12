@@ -1,0 +1,119 @@
+@import "bulma";
+@import "mixins";
+
+[data-theme="dark"] {
+    --arrow-stroke-color: white;
+}
+
+[data-theme="light"] {
+    --arrow-stroke-color: black;
+}
+
+.arrow {
+    width: 60px;
+    height: 85px;
+    z-index: 999;
+}
+
+/* set arrow styles */
+.arrow path {
+    stroke: var(--arrow-stroke-color);
+    stroke-width: 3px;
+    fill: transparent;
+    animation: down 2s infinite;
+}
+
+/* arrow keyframe animation */
+@keyframes down {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+/* arrow animation delay */
+.arrow path.a1 {
+    animation-delay: -1s;
+}
+.arrow path.a2 {
+    animation-delay: -0.5s;
+}
+.arrow path.a3 {
+    animation-delay: 0s;
+}
+
+.banner-container {
+    max-width: 100%;
+    margin-inline: 0px;
+    @include breakpoint(768px) {
+        margin-inline: 20px;
+    }
+}
+
+.skill-icon-size {
+    font-size: 50px;
+    @include breakpoint(768px) {
+        font-size: 75px;
+    }
+}
+
+@keyframes wipe-enter {
+    0% {
+        transform: scale(1, 0.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+.skill-anim {
+    animation: wipe-enter 1s 1;
+}
+
+.rgb::before {
+    content: "";
+    background: linear-gradient(
+            45deg,
+            #ff0000 0%,
+            #ff9a00 10%,
+            #d0de21 20%,
+            #4fdc4a 30%,
+            #3fdad8 40%,
+            #2fc9e2 50%,
+            #1c7fee 60%,
+            #5f15f2 70%,
+            #ba0cf8 80%,
+            #fb07d9 90%,
+            #ff0000 100%
+        )
+        repeat 0% 0% / 300% 100%;
+    position: absolute;
+    inset: -3px;
+    border-radius: 16px;
+    filter: blur(3px);
+    z-index: -99;
+    animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}

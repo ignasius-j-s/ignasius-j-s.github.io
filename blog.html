@@ -1,0 +1,39 @@
+---
+title: Posts
+layout: page
+---
+{% if site.posts.size != 0 %}
+  <h2>Latest Posts</h2>
+
+  {% comment %} {% paginate site.posts by 2 %} {% endcomment %}
+  <ul class="post">
+    {% for post in site.posts %}
+      <li>
+        <a href="{{ post.url }}" hreflang="{{ post.lang }}" class="no-select">
+          <div class="post__entry">
+            <div class="post-title">
+              <h2>{{ post.title }}</h2>
+              <p>
+                <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
+                  <span class="date">{{ post.date | date_to_string }}</span>
+                </time>
+                &middot
+                <span class="lang">{{ post.lang }}</span>
+                &middot
+                <i class="fa-regular fa-clock"></i>
+                <span class="read-estimate">{% include reading_time.html content = post.content %}</span>
+              </p>
+            </div>
+            <p class="excerpt">{{ post.excerpt | strip_html | truncate: 150, '...' }}</p>
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% comment %} {% endpaginate %} {% endcomment %}
+
+{% else %}
+  <div align="center">
+    <p>There is no post yet.</p>
+  </div>
+{% endif %}

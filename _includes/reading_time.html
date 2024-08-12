@@ -1,0 +1,11 @@
+{% if include.content %}
+  {% capture content %}
+    {{ include.content }}
+  {% endcapture %}
+{% endif %}
+
+{% capture min_read %}
+  {{ content | number_of_words | divided_by: 180 }}
+{% endcapture %}
+
+{{ min_read | append: ' min' }}

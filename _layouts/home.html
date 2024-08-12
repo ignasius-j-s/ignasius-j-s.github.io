@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="{{ page.lang | default: "en" }}" data-theme="dark">
+  <head>
+    <meta author="{{ site.author }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title | default: 'Home' }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/home.css" | relative_url }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <script src="https://kit.fontawesome.com/bb35eaea6c.js" crossorigin="anonymous"></script>
+    <script src="{{ "/assets/js/home.js" | relative_url }}"></script>
+    {% seo %}
+    {% include favicon.html %}
+  </head>
+  <body>
+    <!-- Header Section -->
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container banner-container">
+          <img src="{{ "/assets/svg/logo.svg" | relative_url }}" alt="">
+          <h1 class="title is-size-4-mobile is-size-2-desktop">{{ site.title }}</h1>
+          <h2 class="subtitle is-size-6-mobile is-size-4-desktop">{{ site.subtitle }}</h2>
+          <br>
+          <div class="field has-addons is-mobile">
+            <p class="control">
+              <a class="button is-normal is-responsive" href="{{ site.github }}">
+                <span class="icon">
+                  <i class="fa-brands fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-normal is-responsive" href="mailto:{{ site.email }}">
+                <span class="icon">
+                  <i class="fa-solid fa-at"></i>
+                </span>
+                <span>Email</span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-normal is-responsive" href="#">
+                <span class="icon">
+                  <i class="fa-solid fa-arrow-down"></i>
+                </span>
+                <span>Resume</span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-normal is-responsive" href="/blog">
+                <span class="icon">
+                  <i class="fa-solid fa-link"></i>
+                </span>
+                <span>Blog</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <div class="container has-text-centered">
+          <a href="#about">
+            <svg class="arrow">
+              <path class="a1" d="M0 0 L30 22 L60 0"></path>
+              <path class="a2" d="M0 20 L30 42 L60 20"></path>
+              <path class="a3" d="M0 40 L30 62 L60 40"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="wave-container has-background-black has-text-light"></div>
+    <!-- About Me Section -->
+    <section class="section theme-light has-background-light" id="about">
+      <div class="container">
+        <h2 class="title has-text-centered is-size-4-mobile">About Me</h2>
+        <br>
+        <div class="content has-text-centered has-text-dark is-size-6-mobile">
+          <p>
+            Hello, my name is Ignasius. I'm a passionate new programmer, eager to dive into the ever-evolving world of
+            technology.
+          </p>
+          <p>
+            I thrive on exploring different programming languages and frameworks, always aiming to expand my skill set.
+            Writing clean, maintainable code is a priority for me, and I adhere strictly to industry conventions and
+            best practices to ensure quality in my work.
+          </p>
+          <p>
+            I'm looking forward to the opportunities ahead and contributing to innovative projects while continuing my
+            growth as a developer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section theme-light has-background-light">
+      <div class="container">
+        <h2 class="title is-size-4-mobile has-text-centered">Skills</h2>
+        <br>
+        <div class="columns is-multiline is-centered">
+          {% if page.skills %}
+            {% for skill in page.skills %}
+              <div class="column is-one-quarter has-text-centered">
+                <div class="box skill">
+                  <p class="title is-size-4 is-size-6 -mobile">
+                    <i class="{{ skill.icon }} skill-icon-size"></i>
+                    <br>
+                    {{ skill.label }}
+                  </p>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="title has-text-centered">Projects</h2>
+        <br>
+        <div class="columns is-multiline is-centered">
+          {% if page.projects %}
+            {% for project in page.projects %}
+              <div class="column is-half">
+                <div class="card rgb">
+                  <header class="card-header">
+                    <p class="card-header-title is-family-monospace">{{ project.name }}</p>
+                  </header>
+                  <div class="card-image">
+                    <figure class="image">
+                      <img src="{{ project.image | relative_url }}" alt="{{ project.name }}">
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div class="content is-family-monospace">{{ project.desc }}</div>
+                  </div>
+                  <footer class="card-footer">
+                    {% for item in project.footer %}
+                      <a href="{{ item.link }}" class="card-footer-item is-family-monospace">{{ item.label }}</a>
+                    {% endfor %}
+                  </footer>
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          &copy; {{ site.time | date: '%Y' }}
+          <a href="{{ site.url }}">{{ site.author }}</a> &middot Powered by
+          <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>
+        </p>
+        <p>Made with <a href="https://bulma.io" rel="nofollow">Bulma</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>

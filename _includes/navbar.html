@@ -1,0 +1,22 @@
+<header>
+  <div class="masthead">
+    <div class="masthead__inner-wrap">
+      <a href="/" class="masthead__title">{{ site.title }}</a>
+      <nav class="masthead__menu">
+        <ul>
+          {% for item in site.data.navigation %}
+            <li>
+              <a href="{{ item.link }}" class="no-select">
+                {{- item.name -}}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        <label class="switch">
+          <input type="checkbox" name="theme-checkbox">
+          <span class="slider"></span>
+        </label>
+      </nav>
+    </div>
+  </div>
+</header>

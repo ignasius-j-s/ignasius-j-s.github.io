@@ -1,0 +1,9 @@
+- name: Home
+  link: /
+- name: About
+  link: /about
+- name: Posts
+  link: /blog
+# TODO: add tags in navbar
+# - name: Tags
+#   link: /tags
