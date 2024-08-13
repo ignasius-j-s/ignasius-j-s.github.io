@@ -3,7 +3,9 @@
   <head>
     {% include head.html %}
     {% include favicon.html %}
-    {% include analytics.html %}
+    {% if jekyll.environment == 'production' %}
+      {% include analytics.html %}
+    {% endif %}
   </head>
   <body>
     {{ content }}

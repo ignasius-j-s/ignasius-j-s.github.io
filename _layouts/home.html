@@ -11,7 +11,9 @@
     <script src="{{ "/assets/js/home.js" | relative_url }}"></script>
     {% seo %}
     {% include favicon.html %}
-    {% include analytics.html %}
+    {% if jekyll.environment == 'production' %}
+      {% include analytics.html %}
+    {% endif %}
   </head>
   <body>
     <!-- Header Section -->
