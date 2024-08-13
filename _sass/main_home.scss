@@ -73,6 +73,10 @@
     }
 }
 
+.skill {
+    transform: (1, 0);
+}
+
 .skill-anim {
     animation: wipe-enter 1s 1;
 }
