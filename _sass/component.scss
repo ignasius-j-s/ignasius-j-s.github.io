@@ -24,6 +24,20 @@
         color: $frost2;
         text-transform: uppercase;
     }
+    .tags {
+        font-family: $monospace;
+    }
+}
+
+.tags-container {
+    // width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .tag {
+        margin: 0.5em;
+    }
 }
 
 // Button

@@ -4,6 +4,5 @@
   link: /about
 - name: Posts
   link: /blog
-# TODO: add tags in navbar
-# - name: Tags
-#   link: /tags
+- name: Tags
+  link: /tags

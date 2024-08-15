@@ -1,13 +1,19 @@
 ---
-title: Posts
 layout: page
 ---
-{% if site.posts.size != 0 %}
-  <h2>Latest Posts</h2>
+{% assign posts = site.posts %}
+{% assign title = 'Latest Posts' %}
 
-  {% comment %} {% paginate site.posts by 2 %} {% endcomment %}
+{% if page.type == 'tag' %}
+  {% assign posts = page.posts %}
+  {% assign title = page.title | prepend: 'Posts with tag: ' %}
+{% endif %}
+
+{% if posts.size != 0 %}
+  <h2>{{ title }}</h2>
+
   <ul class="post">
-    {% for post in site.posts %}
+    {% for post in posts %}
       <li>
         <a href="{{ post.url }}" hreflang="{{ post.lang }}" class="no-select">
           <div class="post__entry">
@@ -22,6 +28,8 @@ layout: page
                 &middot
                 <i class="fa-regular fa-clock"></i>
                 <span class="read-estimate">{% include reading_time.html content = post.content %}</span>
+                <br>
+                <span class="tags">[ {{ post.tags | join: ', ' }} ]</span>
               </p>
             </div>
             <p class="excerpt">{{ post.excerpt | strip_html | truncate: 150, '...' }}</p>
@@ -30,7 +38,6 @@ layout: page
       </li>
     {% endfor %}
   </ul>
-  {% comment %} {% endpaginate %} {% endcomment %}
 
 {% else %}
   <div align="center">

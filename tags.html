@@ -1,0 +1,16 @@
+---
+title: Tags
+layout: page
+---
+<div align="center">
+  {% if site.tags.size != 0 %}
+    <h2>All Tags</h2>
+    <div class="tags-container">
+      {% for tag in site.tags %}
+        <a href="/tags/{{ tag[0] | slugify: 'latin' }}" class="btn-small tag">{{ tag[0] }}</a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>There is no tag.</p>
+  {% endif %}
+</div>
