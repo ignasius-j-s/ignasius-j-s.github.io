@@ -102,8 +102,8 @@
         <h2 class="title is-size-4-mobile has-text-centered">Skills</h2>
         <br>
         <div class="columns is-multiline is-centered">
-          {% if page.skills %}
-            {% for skill in page.skills %}
+          {% if site.data.home.skills %}
+            {% for skill in site.data.home.skills %}
               <div class="column is-one-quarter has-text-centered">
                 <div class="box skill">
                   <p class="title is-size-4 is-size-6 -mobile">
@@ -125,8 +125,8 @@
         <h2 class="title has-text-centered">Projects</h2>
         <br>
         <div class="columns is-multiline is-centered">
-          {% if page.projects %}
-            {% for project in page.projects %}
+          {% if site.data.home.projects %}
+            {% for project in site.data.home.projects %}
               <div class="column is-half">
                 <div class="card rgb">
                   <header class="card-header">

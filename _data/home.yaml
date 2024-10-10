@@ -1,0 +1,35 @@
+skills:
+  - label: Ruby
+    icon: "devicon-ruby-plain"
+  - label: Rust
+    icon: "devicon-rust-original"
+  - label: Kotlin
+    icon: "devicon-kotlin-plain"
+  - label: HTML
+    icon: "devicon-html5-plain"
+  - label: CSS
+    icon: "devicon-css3-plain"
+  - label: SASS
+    icon: "devicon-sass-original"
+projects:
+  - name: CHIP-8 Emulator
+    desc: >-
+      Emulator for CHIP-8, a low-level interpreted
+      programming language from the 1970s that was
+      intended for game development. This emulator
+      enables you to run programs written for the
+      original CHIP-8 specification on your computer.
+    image: /assets/images/proj-chip8.png
+    footer:
+      - label: Repository
+        link: https://github.com/ignasius-j-s/chip-8
+  - name: Portfolio and Blog Website
+    desc: >-
+      A personal portfolio and blog website developed
+      using jekyll, a static site generator.
+    image: /assets/images/proj-site.png
+    footer:
+      - label: Repository
+        link: https://github.com/ignasius-j-s/ignasius-j-s.github.io
+      - label: Blog
+        link: /blog
