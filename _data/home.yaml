@@ -33,3 +33,10 @@ projects:
         link: https://github.com/ignasius-j-s/ignasius-j-s.github.io
       - label: Blog
         link: /blog
+  - name: Bomb Guy
+    desc: >-
+      2D Platformer Game written in Godot.
+    image: /assets/images/proj-bomb-guy.jpg
+    footer:
+      - label: Repository
+        link: https://github.com/ignasius-j-s/bomb-guy
