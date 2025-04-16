@@ -5,9 +5,11 @@ layout: page
 
 ## About This Blog
 
-Welcome to my blog! This is my personal space where I share my thoughts on various topics,
-with a particular focus on programming and technology. I plan to use this platform to document
-my learning journey, insights, and experiences. While most posts will be in English, you’ll
-also find some written in Indonesian.
+Welcome to my blog! This blog is a place where
+I document some little knowledge I have. Most
+likely, about programming or technology. My
+blogpost are written in either English or
+Bahasa Indonesia, or maybe both.
 
-Thank you for visiting. I hope you find my posts both insightful and engaging. Happy reading!
+I hope my post can be of any help to anyone.
+Thank you for visiting!
